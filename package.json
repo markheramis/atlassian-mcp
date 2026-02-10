@@ -1,0 +1,38 @@
+{
+  "name": "atlassian-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for Atlassian",
+  "main": "build/index.js",
+  "type": "module",
+  "mcp": {
+    "metadata": "./mcp-metadata.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/markheramis/atlassian-mcp"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node build/index.js",
+    "dev": "ts-node src/index.ts",
+    "prepare": "npm run build",
+    "setup": "node install.js",
+    "configure": "node install.js",
+    "postinstall": "node postinstall.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.26.0",
+    "axios": "^1.13.0",
+    "form-data": "^4.0.5",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.0"
+  },
+  "bin": {
+    "atlassian-mcp-server": "./build/index.js",
+    "atlassian-mcp-setup": "./install.js"
+  }
+}

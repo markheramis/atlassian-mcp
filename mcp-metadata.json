@@ -1,0 +1,271 @@
+{
+  "name": "Atlassian",
+  "description": "Integrates with Atlassian JIRA and Confluence, providing tools to manage tickets, search content, and access documentation.",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/markheramis/atlassian-mcp"
+  },
+  "tags": [
+    "atlassian",
+    "jira",
+    "confluence",
+    "project-management",
+    "documentation"
+  ],
+  "categories": [
+    "productivity",
+    "development-tools",
+    "project-management"
+  ],
+  "installation": {
+    "type": "npm",
+    "package": "atlassian-mcp",
+    "command": "atlassian-mcp-server",
+    "configSchema": {
+      "type": "object",
+      "properties": {
+        "baseUrl": {
+          "type": "string",
+          "description": "Your Atlassian instance URL (e.g., https://your-instance.atlassian.net)"
+        },
+        "email": {
+          "type": "string",
+          "description": "Your Atlassian account email"
+        },
+        "token": {
+          "type": "string",
+          "description": "Your Atlassian API token",
+          "format": "password"
+        }
+      },
+      "required": ["baseUrl", "email", "token"]
+    }
+  },
+  "capabilities": {
+    "tools": [
+      {
+        "name": "get_jira_ticket",
+        "description": "Get details of a JIRA ticket by key"
+      },
+      {
+        "name": "search_jira_tickets",
+        "description": "Search for JIRA tickets using JQL"
+      },
+      {
+        "name": "create_jira_ticket",
+        "description": "Create a new JIRA ticket"
+      },
+      {
+        "name": "update_jira_ticket",
+        "description": "Update fields of a JIRA ticket (summary, description, priority, labels)"
+      },
+      {
+        "name": "delete_jira_ticket",
+        "description": "Delete a JIRA ticket (if permissions allow)"
+      },
+      {
+        "name": "transition_jira_ticket",
+        "description": "Change JIRA ticket status through workflow transitions"
+      },
+      {
+        "name": "get_jira_ticket_transitions",
+        "description": "Get available status transitions for a JIRA ticket"
+      },
+      {
+        "name": "assign_jira_ticket",
+        "description": "Assign a JIRA ticket to a user"
+      },
+      {
+        "name": "add_comment_to_jira_ticket",
+        "description": "Add a comment to a JIRA ticket"
+      },
+      {
+        "name": "get_jira_ticket_comments",
+        "description": "Get all comments on a JIRA ticket"
+      },
+      {
+        "name": "update_jira_comment",
+        "description": "Edit an existing comment on a JIRA ticket"
+      },
+      {
+        "name": "delete_jira_comment",
+        "description": "Delete a comment from a JIRA ticket"
+      },
+      {
+        "name": "add_attachment_to_jira_ticket",
+        "description": "Upload file attachment to a JIRA ticket"
+      },
+      {
+        "name": "link_jira_tickets",
+        "description": "Link two JIRA tickets together (relates, blocks, duplicates, etc.)"
+      },
+      {
+        "name": "add_worklog_to_jira_ticket",
+        "description": "Log time spent on a JIRA ticket"
+      },
+      {
+        "name": "get_jira_ticket_worklogs",
+        "description": "Retrieve all worklog entries for a JIRA ticket"
+      },
+      {
+        "name": "update_jira_worklog",
+        "description": "Modify an existing worklog entry on a JIRA ticket"
+      },
+      {
+        "name": "delete_jira_worklog",
+        "description": "Remove a worklog entry from a JIRA ticket"
+      },
+      {
+        "name": "add_watcher_to_jira_ticket",
+        "description": "Add a user as a watcher to a JIRA ticket"
+      },
+      {
+        "name": "remove_watcher_from_jira_ticket",
+        "description": "Remove a watcher from a JIRA ticket"
+      },
+      {
+        "name": "get_jira_ticket_watchers",
+        "description": "List all watchers of a JIRA ticket"
+      },
+      {
+        "name": "add_label_to_jira_ticket",
+        "description": "Add a label to a JIRA ticket for categorization"
+      },
+      {
+        "name": "remove_label_from_jira_ticket",
+        "description": "Remove a label from a JIRA ticket"
+      },
+      {
+        "name": "get_jira_projects",
+        "description": "Get list of all JIRA projects"
+      },
+      {
+        "name": "get_jira_project",
+        "description": "Get detailed information about a JIRA project"
+      },
+      {
+        "name": "get_jira_components",
+        "description": "Get all components for a JIRA project"
+      },
+      {
+        "name": "get_jira_issue_types",
+        "description": "Get available issue types for a project or globally"
+      },
+      {
+        "name": "get_jira_priorities",
+        "description": "Get all available priority options in Jira"
+      },
+      {
+        "name": "get_jira_statuses",
+        "description": "Get all available statuses for a JIRA project"
+      },
+      {
+        "name": "get_confluence_page",
+        "description": "Get a Confluence page by ID"
+      },
+      {
+        "name": "search_confluence",
+        "description": "Search for content in Confluence"
+      },
+      {
+        "name": "search_confluence_by_space",
+        "description": "Search for content within a specific Confluence space"
+      },
+      {
+        "name": "search_confluence_by_label",
+        "description": "Search for Confluence pages by label"
+      },
+      {
+        "name": "create_confluence_page",
+        "description": "Create a new Confluence page"
+      },
+      {
+        "name": "update_confluence_page",
+        "description": "Update an existing Confluence page"
+      },
+      {
+        "name": "delete_confluence_page",
+        "description": "Delete a Confluence page"
+      },
+      {
+        "name": "get_confluence_spaces",
+        "description": "List all Confluence spaces"
+      },
+      {
+        "name": "get_confluence_space",
+        "description": "Get detailed information about a specific Confluence space"
+      },
+      {
+        "name": "get_confluence_space_content",
+        "description": "List all pages and content within a Confluence space"
+      },
+      {
+        "name": "add_comment_to_confluence_page",
+        "description": "Add a comment to a Confluence page"
+      },
+      {
+        "name": "get_confluence_page_comments",
+        "description": "Get all comments on a Confluence page"
+      },
+      {
+        "name": "update_confluence_comment",
+        "description": "Edit an existing comment on a Confluence page"
+      },
+      {
+        "name": "delete_confluence_comment",
+        "description": "Delete a comment from a Confluence page"
+      },
+      {
+        "name": "get_confluence_page_attachments",
+        "description": "List all attachments on a Confluence page"
+      },
+      {
+        "name": "upload_attachment_to_confluence_page",
+        "description": "Upload a file as an attachment to a Confluence page"
+      },
+      {
+        "name": "download_confluence_attachment",
+        "description": "Get download URL and metadata for a Confluence attachment"
+      },
+      {
+        "name": "add_label_to_confluence_page",
+        "description": "Add a label to a Confluence page for categorization"
+      },
+      {
+        "name": "remove_label_from_confluence_page",
+        "description": "Remove a label from a Confluence page"
+      },
+      {
+        "name": "get_confluence_page_labels",
+        "description": "Get all labels on a Confluence page"
+      },
+      {
+        "name": "get_confluence_page_history",
+        "description": "Get version history of a Confluence page"
+      },
+      {
+        "name": "get_confluence_page_children",
+        "description": "Get child pages (sub-pages) of a Confluence page"
+      },
+      {
+        "name": "get_confluence_page_ancestors",
+        "description": "Get parent pages (ancestors) of a Confluence page"
+      }
+    ],
+    "resources": [
+      {
+        "pattern": "jira://ticket/*",
+        "description": "JIRA tickets"
+      },
+      {
+        "pattern": "confluence://spaces",
+        "description": "Confluence spaces"
+      },
+      {
+        "pattern": "confluence://page/*",
+        "description": "Confluence pages"
+      }
+    ]
+  }
+}
